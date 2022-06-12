@@ -1,0 +1,27 @@
+<div class="max-w-6xl mx-auto px-[20px]">
+  <div>
+    <h2 class="text-[44px] font-bold pb-10 pt-20">Blog</h2>
+  </div>
+  <div *ngFor="let blog of bloglist" class="grid md:grid-cols-[246px,auto] gap-8 border-b py-10">
+    <div>
+      <img
+        [src]="blog.img"
+        class="rounded-lg w-full"
+        alt=""
+      />
+    </div>
+    <div>
+      <h2 class="text-[#21243D] md:text-[30px] text-[26px]">
+       {{blog.name}}
+      </h2>
+      <div class="py-2">
+        <span>12 Feb 2019</span>
+        <span class="px-2">|</span>
+        <span class="text-[#8695A4]">{{blog.userCreate}}</span>
+      </div>
+      <p class="pt-3">
+        {{blog.description}}
+      </p>
+    </div>
+  </div>
+</div>
