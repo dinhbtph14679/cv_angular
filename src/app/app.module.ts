@@ -19,6 +19,8 @@ import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
 import { AdminProjectComponent } from './pages/admin/admin-project/admin-project.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AddBlogComponent } from './components/add-blog/add-blog.component'
+import { FormsModule } from '@angular/forms';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +38,15 @@ import { AddBlogComponent } from './components/add-blog/add-blog.component'
     FooterAdminComponent,
     NavAdminComponent,
     AdminProjectComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

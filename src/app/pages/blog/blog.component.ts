@@ -9,7 +9,7 @@ import { BlogServices } from 'src/app/services/blog-services.service';
 })
 export class BlogComponent implements OnInit {
 
-  bloglist!: Iblogs[]
+  bloglist!: any
 
   constructor(private BlogServices:BlogServices) { }
 
@@ -24,10 +24,4 @@ export class BlogComponent implements OnInit {
 
     });
   }
-  onHandleRemove(id: number){
-    this.BlogServices.removeBlogs(id).subscribe((data) => {
-      this.bloglist = this.bloglist.filter(item => item.id !== id);
-    })
-  }
-
 }

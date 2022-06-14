@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let blog of bloglist, let i = index">
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let blog of data, let i = index">
         <td class="px-6 py-4">{{i +1 }}</td>
         <td class="px-6 py-4 text-[12 px]">{{blog.name}}</td>
         <td class="px-6 py-4">
@@ -26,7 +26,7 @@
         <td class="px-6 py-4">{{blog.description}}</td>
         <td class="px-6 py-4">{{blog.userCreate}}</td>
         <td class="px-6 py-4">
-          <a routerLink="#" class="inline-block font-medium text-white bg-green-500 hover:bg-green-600 rounded py-1 px-2">Edit</a>
+          <a routerLink="edit/{{blog.id}}" class="inline-block font-medium text-white bg-green-500 hover:bg-green-600 rounded py-1 px-2">Edit</a>
           <button class="inline-block font-medium text-white bg-red-500 hover:bg-red-600 rounded py-1 px-2 mt-1" (click)="onHandleRemove(blog.id!)">Delete</button>
         </td>
       </tr>

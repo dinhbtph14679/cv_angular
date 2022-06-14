@@ -9,23 +9,21 @@ import { BlogServices } from 'src/app/services/blog-services.service';
 })
 export class AdminBlogComponent implements OnInit {
 
-  bloglist!: Iblogs[]
+  data: any;
+
 
   constructor(private BlogServices:BlogServices) { }
 
   ngOnInit(): void {
-    this.getBlogs()
+    this.BlogServices.getBlogsList().subscribe(data => {
+      this.data = data
+    })
   }
-  getBlogs(){
-    this.BlogServices.getBlogsList().subscribe((data) => {
-      this.bloglist = data;
-    });
-  }
+
   onHandleRemove(id: number){
-    const a = confirm("Bạn có muốn xóa bài viết này không?");
-    if (a) {
-      this.BlogServices.removeBlogs(id).subscribe(() => {
-        this.bloglist = this.bloglist.filter(item => item.id !== id);
+    if (confirm("bạn muốn xóa sản phẩm") == true) {
+      this.BlogServices.removeBlogs(id).subscribe((data) => {
+        this.ngOnInit()
       })
     }
   }

@@ -12,7 +12,7 @@ export class BlogServices {
 
   constructor( private htpp: HttpClient) { }
 
-  getBlogs(id: Iblogs):Observable<Iblogs>{
+  getBlogs(id: any):Observable<Iblogs>{
     return this.htpp.get<Iblogs>(`${this.API_URL}/${id}`)
   }
   getBlogsList():Observable<Iblogs[]>{
